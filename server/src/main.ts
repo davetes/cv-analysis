@@ -4,7 +4,7 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import * as cors from 'cors';
 
 async function bootstrap() {
-  const logger = new Logger('HireAssistServer');
+  const logger = new Logger('Recruiter Server');
   const app = await NestFactory.create(AppModule);
 
   app.use(cors({
