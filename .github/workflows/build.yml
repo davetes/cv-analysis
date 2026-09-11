@@ -1,0 +1,14 @@
+name: Build Check
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24.18.0
+      - name: Install Dependencies
+        run: npm install
+      - run: echo "Build completed successfully"

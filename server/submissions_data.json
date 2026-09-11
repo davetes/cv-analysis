@@ -1,0 +1,520 @@
+[
+  {
+    "id": "sub-alex-rivera-1788947466150",
+    "candidateName": "Alex Rivera",
+    "candidateEmail": "alex-rivera@example.com",
+    "targetRole": "Staff Backend & Cloud Architect",
+    "jobDescription": "Job Title: Staff Backend Engineer - Core Infrastructure\nLocation: San Francisco, CA (Hybrid: 2 days in office)\nTeam: Cloud Platform & Event Streaming Team\nExperience Required: 6+ years in high-throughput backend services\n\nRole Overview:\nWe are looking for a Staff Backend Engineer to design and scale our real-time event streaming pipeline processing over 250,000 events/second. You will lead our migration from legacy monolithic workers to a distributed NestJS and Go microservices mesh deployed on Kubernetes (EKS).\n\nRequirements:\n- Minimum 6 years of experience building distributed backend systems in TypeScript (NestJS/Node.js) or Go.\n- Production experience with Apache Kafka, Redis 7.x Cluster, and PostgreSQL with PgBouncer.\n- Strong knowledge of Kubernetes orchestration, Helm charts, and custom Prometheus metrics.\n- Prior experience leading cross-functional architectural reviews and mentoring 5+ engineers.\n- Must be located within commuting distance of San Francisco, CA.",
+    "cvText": "ALEX RIVERA\nEmail: alex.rivera.dev@example.com | GitHub: github.com/alexrivera-cloud | Location: San Francisco, CA\n\nPROFESSIONAL SUMMARY:\nStaff Backend Engineer with 8+ years architecting fault-tolerant distributed platforms, real-time message streams, and microservice meshes. Led infrastructure scale at ScaleWave from 50k to 300k rps.\n\nEMPLOYMENT HISTORY:\nScaleWave Systems — Staff Backend Architect (2020 – Present)\n- Designed and maintained core distributed event router processing 300k events/sec using NestJS, Go, and Kafka.\n- Reduced p99 API latency by 42% through Redis cluster caching strategies and PostgreSQL partition tuning.\n- Mentored a team of 7 senior engineers and drove infrastructure as code adoption via Terraform & EKS.\n\nDataFlow Inc. — Senior Backend Engineer (2017 – 2020)\n- Built high-concurrency ingestion pipelines using Node.js, TypeScript, and RabbitMQ.\n- Re-architected monolithic billing engine into resilient event-driven microservices.\n\nCloudGrid Solutions — Software Engineer (2015 – 2017)\n- Developed REST and gRPC microservices using Go and PostgreSQL.\n\nEDUCATION:\n- B.S. in Computer Science, University of California, Berkeley (2011 – 2015)\n\nCORE SKILLS:\nNestJS, TypeScript, Go, Apache Kafka, Redis 7, PostgreSQL, Kubernetes, Docker, AWS (EKS, RDS, S3), Prometheus, Distributed Systems.",
+    "linkedinText": "Alex Rivera\nStaff Backend Architect at ScaleWave Systems | Distributed Systems & High-Throughput Cloud\nSan Francisco Bay Area\n\nExperience:\nScaleWave Systems\nStaff Backend Architect\n2020 – Present · 4 yrs\nSan Francisco, California\nLeading architecture for real-time stream processing, Kafka pipelines, and NestJS microservices.\n\nDataFlow Inc.\nSenior Backend Engineer\n2017 – 2020 · 3 yrs\nSan Francisco, California\nHigh concurrency data pipelines and API architecture.\n\nCloudGrid Solutions\nSoftware Engineer\n2015 – 2017 · 2 yrs\nOakland, California\n\nEducation:\nUC Berkeley\nBachelor of Science - BS, Computer Science\n2011 – 2015\n\nSkills:\nDistributed Systems, Apache Kafka, NestJS, Go, Kubernetes, Redis, PostgreSQL, AWS, Microservices Architecture",
+    "githubText": "GitHub Profile: alexrivera-cloud\nPublic Repositories: 34 | Followers: 840 | Total Commits (Past Year): 1,420\n\nTop Repositories:\n1. repo: distributed-task-orchestrator (TypeScript / NestJS / Redis)\n   - Stars: 612 | Forks: 89\n   - Description: A distributed task queue and workflow engine with leader election, priority scheduling, and circuit breaker patterns. Built on top of NestJS and Redis Streams.\n   - Key Files: /src/engine/leader-election.ts, /src/cluster/circuit-breaker.ts, /src/queue/redis-stream-consumer.ts\n   - Recent Commits: \"feat(consumer): implement adaptive backoff and DLQ replay worker\", \"perf(streams): batch XREADGROUP ack pipeline to minimize roundtrips\"\n\n2. repo: fast-event-bus-ts (TypeScript)\n   - Stars: 245\n   - Description: Zero-dependency zero-copy publish-subscribe event emitter with lock-free ring buffer for Node.js workers.\n\n3. repo: kube-autoscaler-controller (Go)\n   - Stars: 180\n   - Description: Custom Kubernetes CRD controller scaling pods based on Kafka consumer lag metrics.\n\nLanguages breakdown:\n- TypeScript: 64%\n- Go: 26%\n- Shell / Dockerfile: 10%",
+    "overallVerdict": "Strong Yes",
+    "linkedinMatchScore": 100,
+    "gatekeeperQuestions": [
+      {
+        "question": "According to the Job Description, what is the work location and attendance policy for this role?",
+        "options": {
+          "A": "San Francisco, CA (Hybrid: 2 days in office)",
+          "B": "100% Remote anywhere in the world",
+          "C": "New York, NY (Full-time on-site)",
+          "D": "Austin, TX (Hybrid: 4 days in office)"
+        },
+        "correct_answer": "A"
+      },
+      {
+        "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+        "options": {
+          "A": "Processing 10,000 req/sec using RabbitMQ",
+          "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+          "C": "Processing 50,000 batch records nightly with AWS SQS",
+          "D": "Single-server SQLite queue"
+        },
+        "correct_answer": "B"
+      },
+      {
+        "question": "What is the minimum years of experience in distributed systems required by the JD?",
+        "options": {
+          "A": "Minimum 6+ years building distributed backend systems in TypeScript/Go",
+          "B": "2 years general programming experience",
+          "C": "10 years C++ embedded development",
+          "D": "No minimum experience specified"
+        },
+        "correct_answer": "A"
+      }
+    ],
+    "verification": {
+      "linkedin_match_score": 100,
+      "discrepancies": []
+    },
+    "githubAnalysis": {
+      "top_languages": [
+        "TypeScript",
+        "Go",
+        "Shell / Dockerfile"
+      ],
+      "best_project": "distributed-task-orchestrator — A distributed task queue and workflow engine with leader election, priority scheduling, and circuit breaker patterns built on NestJS & Redis Streams.",
+      "technical_questions": [
+        "Architecture: In distributed-task-orchestrator, how did you implement the leader election mechanism to prevent split-brain conditions across Redis Streams consumer groups when cluster network partitions occur?",
+        "Function/Library: In redis-stream-consumer.ts, what was your rationale for batching XREADGROUP acknowledgments, and how do you handle dead-letter-queue (DLQ) retries if a consumer worker crashes mid-batch?",
+        "Scaling & Performance: If your task queue load scales from 50,000 to 500,000 tasks/second, what bottleneck would you hit first in Redis memory serialization versus PostgreSQL persistence, and how would you optimize connection pooling with PgBouncer?"
+      ]
+    },
+    "behavioralQuestions": [
+      "Tell me about a time you led the architectural migration at ScaleWave to handle 300k events/sec, and how you managed cross-team risks without incurring downtime.",
+      "Describe a situation where you had to mentor a senior engineering team through an infrastructure overhaul (like adopting Terraform and EKS). How did you resolve engineering disagreements regarding best practices?",
+      "Can you share an example of a critical production latency incident you debugged in Redis or PostgreSQL, and what long-term preventive mechanisms you put in place?"
+    ],
+    "confrontationScript": "No discrepancies found.",
+    "fullAnalysisJson": {
+      "candidate_name": "Alex Rivera",
+      "gatekeeper_questions": [
+        {
+          "question": "According to the Job Description, what is the work location and attendance policy for this role?",
+          "options": {
+            "A": "San Francisco, CA (Hybrid: 2 days in office)",
+            "B": "100% Remote anywhere in the world",
+            "C": "New York, NY (Full-time on-site)",
+            "D": "Austin, TX (Hybrid: 4 days in office)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+          "options": {
+            "A": "Processing 10,000 req/sec using RabbitMQ",
+            "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+            "C": "Processing 50,000 batch records nightly with AWS SQS",
+            "D": "Single-server SQLite queue"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the minimum years of experience in distributed systems required by the JD?",
+          "options": {
+            "A": "Minimum 6+ years building distributed backend systems in TypeScript/Go",
+            "B": "2 years general programming experience",
+            "C": "10 years C++ embedded development",
+            "D": "No minimum experience specified"
+          },
+          "correct_answer": "A"
+        }
+      ],
+      "verification": {
+        "linkedin_match_score": 100,
+        "discrepancies": []
+      },
+      "github_analysis": {
+        "top_languages": [
+          "TypeScript",
+          "Go",
+          "Shell / Dockerfile"
+        ],
+        "best_project": "distributed-task-orchestrator — A distributed task queue and workflow engine with leader election, priority scheduling, and circuit breaker patterns built on NestJS & Redis Streams.",
+        "technical_questions": [
+          "Architecture: In distributed-task-orchestrator, how did you implement the leader election mechanism to prevent split-brain conditions across Redis Streams consumer groups when cluster network partitions occur?",
+          "Function/Library: In redis-stream-consumer.ts, what was your rationale for batching XREADGROUP acknowledgments, and how do you handle dead-letter-queue (DLQ) retries if a consumer worker crashes mid-batch?",
+          "Scaling & Performance: If your task queue load scales from 50,000 to 500,000 tasks/second, what bottleneck would you hit first in Redis memory serialization versus PostgreSQL persistence, and how would you optimize connection pooling with PgBouncer?"
+        ]
+      },
+      "overall_verdict": "Strong Yes",
+      "behavioral_questions": [
+        "Tell me about a time you led the architectural migration at ScaleWave to handle 300k events/sec, and how you managed cross-team risks without incurring downtime.",
+        "Describe a situation where you had to mentor a senior engineering team through an infrastructure overhaul (like adopting Terraform and EKS). How did you resolve engineering disagreements regarding best practices?",
+        "Can you share an example of a critical production latency incident you debugged in Redis or PostgreSQL, and what long-term preventive mechanisms you put in place?"
+      ],
+      "confrontation_script": "No discrepancies found."
+    },
+    "createdAt": "2026-09-09T09:51:06.150Z"
+  },
+  {
+    "id": "sub-jordan-lee-1788947466153",
+    "candidateName": "Jordan Lee",
+    "candidateEmail": "jordan-lee@example.com",
+    "targetRole": "Senior Frontend Engineer (Embellished Profile)",
+    "jobDescription": "Job Title: Lead Frontend Architect - Design Systems & Web Apps\nLocation: New York, NY (Hybrid: 3 days on-site)\nExperience Required: 7+ years in modern web development, Next.js, and TypeScript\n\nRequirements:\n- Minimum 7 years developing complex single-page and server-rendered web applications using React & Next.js.\n- Demonstrated experience architecting custom Design Systems and Micro-Frontends for enterprise applications.\n- Proven track record leading front-end engineering teams of 8+ developers.\n- Must have solid experience with React 18/19, Next.js App Router, Tailwind/Vanilla CSS, Webpack/Turbopack, and Web Vitals optimization.\n- Bachelor's degree in Computer Science or equivalent.",
+    "cvText": "JORDAN LEE\nEmail: jordan.lee.engineering@example.com | Location: New York, NY\n\nPROFESSIONAL EXPERIENCE:\nHyperGrowth Enterprise — Lead Frontend Architect (2019 – Present)\n- Directed a department of 22 frontend engineers building next-generation Next.js and React enterprise portals.\n- Architected enterprise design system used by 50+ development squads across the globe.\n- Implemented micro-frontend architecture using Webpack Module Federation, decreasing build times by 65%.\n\nOmniTech Solutions — Senior Fullstack Developer (2017 – 2019)\n- Led UI architecture and migration from AngularJS to React 16.\n- Managed end-to-end cloud deployments on AWS and GCP.\n\nEDUCATION:\n- M.S. in Computer Science, Columbia University (2015 – 2017)\n- B.S. in Computer Science, NYU (2011 – 2015)\n\nSKILLS:\nNext.js, React, TypeScript, Micro-Frontends, Design Systems, Architecture, GraphQL, Docker, Kubernetes.",
+    "linkedinText": "Jordan Lee\nFrontend Developer at HyperGrowth Enterprise | React & UI Developer\nGreater New York City Area\n\nExperience:\nHyperGrowth Enterprise\nFrontend Developer\nJan 2022 – Present · 2 yrs\nNew York, United States\nBuilding React dashboard components and styling design system buttons.\n\nOmniTech Solutions\nJunior Web Developer\nJun 2020 – Dec 2021 · 1 yr 7 mos\nNew York, United States\nBug fixing in legacy frontend and maintaining HTML/CSS templates.\n\nEducation:\nCity College of New York (CCNY)\nBachelor's degree, Information Technology\n2016 – 2020\n\nSkills:\nJavaScript, React.js, HTML5, CSS3, Git",
+    "githubText": "GitHub Profile: jordanlee-dev\nPublic Repositories: 8 | Followers: 3 | Total Commits (Past Year): 14\n\nRepositories:\n1. repo: nextjs-enterprise-boilerplate (Forked from vercel/next-learn-starter)\n   - Stars: 0 | Forks: 0\n   - Description: Tutorial starter code for Next.js.\n   - Recent Commits: \"Update README.md\", \"initial commit\"\n\n2. repo: react-todo-app (JavaScript)\n   - Stars: 1\n   - Description: Simple React Todo application with LocalStorage.\n   - Recent Commits: \"fixed typo in button\"\n\n3. repo: css-buttons-kit (CSS)\n   - Description: Collection of hover effects.\n\nLanguages breakdown:\n- HTML/CSS: 58%\n- JavaScript: 38%\n- TypeScript: 4%",
+    "overallVerdict": "Red Flag",
+    "linkedinMatchScore": 15,
+    "gatekeeperQuestions": [
+      {
+        "question": "What is the required work arrangement and office location specified in the JD?",
+        "options": {
+          "A": "Fully remote with quarterly travel",
+          "B": "New York, NY (Hybrid: 3 days on-site)",
+          "C": "San Francisco, CA (Remote option)",
+          "D": "London, UK (Hybrid)"
+        },
+        "correct_answer": "B"
+      },
+      {
+        "question": "Which frontend architecture and framework are central to the requirements in this Job Description?",
+        "options": {
+          "A": "AngularJS single-page application with Grunt",
+          "B": "Vue 2 with Vuex legacy state machine",
+          "C": "Next.js, TypeScript, Design Systems, and Micro-Frontends",
+          "D": "Ruby on Rails server-side templates"
+        },
+        "correct_answer": "C"
+      },
+      {
+        "question": "What minimum years of experience and leadership scope does the Job Description request?",
+        "options": {
+          "A": "1-2 years junior internship experience",
+          "B": "3-4 years mid-level feature development",
+          "C": "Minimum 7+ years with proven track record leading teams of 8+ developers",
+          "D": "10+ years executive VP leadership only"
+        },
+        "correct_answer": "C"
+      }
+    ],
+    "verification": {
+      "linkedin_match_score": 15,
+      "discrepancies": [
+        "CV claims tenure at HyperGrowth began in 2019, whereas LinkedIn profile indicates employment started in Jan 2022 (3-year mismatch).",
+        "CV lists current title as 'Lead Frontend Architect' managing 22 engineers, while LinkedIn profile lists title as 'Frontend Developer' working on dashboard UI components.",
+        "CV states M.S. in Computer Science from Columbia University (2015–2017), whereas LinkedIn lists B.S. in IT from City College of New York (CCNY) (2016–2020).",
+        "CV lists past role at OmniTech Solutions as 'Senior Fullstack Developer' (2017–2019), but LinkedIn lists 'Junior Web Developer' (2020–2021)."
+      ]
+    },
+    "githubAnalysis": {
+      "top_languages": [
+        "HTML/CSS",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "best_project": "react-todo-app — A client-side Todo application demonstrating basic React state hooks and LocalStorage persistence.",
+      "technical_questions": [
+        "Architecture: In your Next.js boilerplate project, the codebase appears to be a direct fork of the Next.js starter template. How did you architect the micro-frontend module federation mentioned in your resume?",
+        "Function/Library: In react-todo-app, how do you handle concurrent state updates and race conditions if multiple browser tabs write to LocalStorage simultaneously?",
+        "Scaling & Performance: When scaling a frontend application to enterprise scale with 50+ development squads, how do you enforce bundle size limits, tree-shaking, and CSS specificity across isolated micro-frontends?"
+      ]
+    },
+    "behavioralQuestions": [
+      "You noted leading a team of 22 frontend engineers at HyperGrowth. Describe how you structured sprint planning, technical RFCs, and code review standards across such a large squad.",
+      "Tell me about a time when a major design system rollout faced resistance from product or engineering teams. How did you drive adoption across 50+ squads?",
+      "Describe how you measured and validated the 65% build time improvement reported in your micro-frontend architecture initiative."
+    ],
+    "confrontationScript": "During our review, we noted an inconsistency where CV claims tenure at HyperGrowth began in 2019, whereas LinkedIn profile indicates employment started in Jan 2022 (3-year mismatch). Could you walk us through the timeline and clarify the specific scope of responsibilities you held during this period?",
+    "fullAnalysisJson": {
+      "candidate_name": "Jordan Lee",
+      "gatekeeper_questions": [
+        {
+          "question": "What is the required work arrangement and office location specified in the JD?",
+          "options": {
+            "A": "Fully remote with quarterly travel",
+            "B": "New York, NY (Hybrid: 3 days on-site)",
+            "C": "San Francisco, CA (Remote option)",
+            "D": "London, UK (Hybrid)"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "Which frontend architecture and framework are central to the requirements in this Job Description?",
+          "options": {
+            "A": "AngularJS single-page application with Grunt",
+            "B": "Vue 2 with Vuex legacy state machine",
+            "C": "Next.js, TypeScript, Design Systems, and Micro-Frontends",
+            "D": "Ruby on Rails server-side templates"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What minimum years of experience and leadership scope does the Job Description request?",
+          "options": {
+            "A": "1-2 years junior internship experience",
+            "B": "3-4 years mid-level feature development",
+            "C": "Minimum 7+ years with proven track record leading teams of 8+ developers",
+            "D": "10+ years executive VP leadership only"
+          },
+          "correct_answer": "C"
+        }
+      ],
+      "verification": {
+        "linkedin_match_score": 15,
+        "discrepancies": [
+          "CV claims tenure at HyperGrowth began in 2019, whereas LinkedIn profile indicates employment started in Jan 2022 (3-year mismatch).",
+          "CV lists current title as 'Lead Frontend Architect' managing 22 engineers, while LinkedIn profile lists title as 'Frontend Developer' working on dashboard UI components.",
+          "CV states M.S. in Computer Science from Columbia University (2015–2017), whereas LinkedIn lists B.S. in IT from City College of New York (CCNY) (2016–2020).",
+          "CV lists past role at OmniTech Solutions as 'Senior Fullstack Developer' (2017–2019), but LinkedIn lists 'Junior Web Developer' (2020–2021)."
+        ]
+      },
+      "github_analysis": {
+        "top_languages": [
+          "HTML/CSS",
+          "JavaScript",
+          "TypeScript"
+        ],
+        "best_project": "react-todo-app — A client-side Todo application demonstrating basic React state hooks and LocalStorage persistence.",
+        "technical_questions": [
+          "Architecture: In your Next.js boilerplate project, the codebase appears to be a direct fork of the Next.js starter template. How did you architect the micro-frontend module federation mentioned in your resume?",
+          "Function/Library: In react-todo-app, how do you handle concurrent state updates and race conditions if multiple browser tabs write to LocalStorage simultaneously?",
+          "Scaling & Performance: When scaling a frontend application to enterprise scale with 50+ development squads, how do you enforce bundle size limits, tree-shaking, and CSS specificity across isolated micro-frontends?"
+        ]
+      },
+      "overall_verdict": "Red Flag",
+      "behavioral_questions": [
+        "You noted leading a team of 22 frontend engineers at HyperGrowth. Describe how you structured sprint planning, technical RFCs, and code review standards across such a large squad.",
+        "Tell me about a time when a major design system rollout faced resistance from product or engineering teams. How did you drive adoption across 50+ squads?",
+        "Describe how you measured and validated the 65% build time improvement reported in your micro-frontend architecture initiative."
+      ],
+      "confrontation_script": "During our review, we noted an inconsistency where CV claims tenure at HyperGrowth began in 2019, whereas LinkedIn profile indicates employment started in Jan 2022 (3-year mismatch). Could you walk us through the timeline and clarify the specific scope of responsibilities you held during this period?"
+    },
+    "createdAt": "2026-09-09T08:51:06.152Z"
+  },
+  {
+    "id": "sub-taylor-smith-1788947466155",
+    "candidateName": "Taylor Smith",
+    "candidateEmail": "taylor-smith@example.com",
+    "targetRole": "Senior AI/ML Engineer applying for Web Platform",
+    "jobDescription": "Job Title: Senior Full-Stack Engineer (Next.js & NestJS)\nLocation: Remote (US/Canada Timezones)\nExperience Required: 4+ years fullstack web development\n\nRequirements:\n- 4+ years building full-stack web applications with Next.js (React) and NestJS (Node.js/TypeScript).\n- Deep experience with PostgreSQL, Prisma/TypeORM, GraphQL, and Redis.\n- Experience delivering user-facing interfaces with high performance and accessibility.\n- Ability to work asynchronously in US Eastern to Pacific timezones.",
+    "cvText": "TAYLOR SMITH\nEmail: taylor.smith.ai@example.com | Location: Seattle, WA (Remote)\n\nEXPERIENCE:\nNeuroTech Systems — Senior Machine Learning Engineer (2021 – Present)\n- Developed high-performance model serving microservices in Python (FastAPI) and C++ ONNX runtime.\n- Built internal annotation dashboards with React and TypeScript.\n- Scaled inference endpoints to handle 15 million daily predictions.\n\nVisionLabs Inc. — Software Engineer (2019 – 2021)\n- Built backend ETL data pipelines using Python, PostgreSQL, and Docker.\n- Collaborated with frontend engineers to build API endpoints.\n\nEDUCATION:\n- B.S. in Computer Science & Applied Math, University of Washington (2015 – 2019)\n\nSKILLS:\nPython, PyTorch, FastAPI, TypeScript, React, PostgreSQL, Docker, Kubernetes, AWS, C++.",
+    "linkedinText": "Taylor Smith\nSenior Machine Learning Engineer at NeuroTech Systems\nSeattle, Washington, United States\n\nExperience:\nNeuroTech Systems\nSenior Machine Learning Engineer\nMay 2021 – Present · 3 yrs 4 mos\nSeattle, WA\n\nVisionLabs Inc.\nSoftware Engineer\nJun 2019 – May 2021 · 2 yrs\nSeattle, WA\n\nEducation:\nUniversity of Washington\nBachelor of Science, Computer Science & Applied Mathematics\n2015 – 2019\n\nSkills:\nPython, Machine Learning, FastAPI, PyTorch, PostgreSQL, Docker, TypeScript, React",
+    "githubText": "GitHub Profile: taylorsmith-ml\nPublic Repositories: 22 | Followers: 310 | Commits (Past Year): 920\n\nRepositories:\n1. repo: transformer-pruning-toolkit (Python)\n   - Stars: 430 | Forks: 52\n   - Description: Structured weight pruning and quantization library for HuggingFace Transformers with ONNX runtime export.\n   - Key Files: /src/quantization/fp8_engine.py, /src/pruning/structured_sparse.py\n   - Recent Commits: \"feat(quant): add INT4 weight-only quantization support for LLaMA architecture\"\n\n2. repo: fast-onnx-serve (Python / C++)\n   - Stars: 195\n   - Description: High-throughput async batching inference server using FastAPI and uvloop.\n\n3. repo: annotation-studio-ui (TypeScript / React)\n   - Stars: 45\n   - Description: Lightweight bounding-box labeling tool built with React and Canvas API.\n\nLanguages breakdown:\n- Python: 78%\n- C++: 12%\n- TypeScript: 10%",
+    "overallVerdict": "Maybe",
+    "linkedinMatchScore": 100,
+    "gatekeeperQuestions": [
+      {
+        "question": "What time zone / location constraint does this remote position require according to the JD?",
+        "options": {
+          "A": "European Central Time only",
+          "B": "Asia-Pacific working hours",
+          "C": "Remote (US/Canada Timezones)",
+          "D": "No location or time zone constraints"
+        },
+        "correct_answer": "C"
+      },
+      {
+        "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+        "options": {
+          "A": "Processing 10,000 req/sec using RabbitMQ",
+          "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+          "C": "Processing 50,000 batch records nightly with AWS SQS",
+          "D": "Single-server SQLite queue"
+        },
+        "correct_answer": "B"
+      },
+      {
+        "question": "What baseline experience requirement is explicitly specified in the JD?",
+        "options": {
+          "A": "4+ years full-stack web development with modern TypeScript/Next.js stack",
+          "B": "1 year bootcamp certification",
+          "C": "15+ years enterprise legacy architecture",
+          "D": "Entry level without prior production deployments"
+        },
+        "correct_answer": "A"
+      }
+    ],
+    "verification": {
+      "linkedin_match_score": 100,
+      "discrepancies": []
+    },
+    "githubAnalysis": {
+      "top_languages": [
+        "Python",
+        "C++",
+        "TypeScript"
+      ],
+      "best_project": "transformer-pruning-toolkit — Structured weight pruning and INT4/FP8 quantization engine for HuggingFace Transformers with ONNX runtime export.",
+      "technical_questions": [
+        "Architecture: In transformer-pruning-toolkit, how did you structure the quantization pipeline to preserve model perplexity while exporting computation graphs to ONNX runtime?",
+        "Function/Library: In fast-onnx-serve, how does your async batching queue interact with uvloop and worker threads to prevent Python GIL contention during high-throughput inference?",
+        "Scaling & Performance: How would you transition this backend service into a distributed NestJS/Next.js full-stack platform serving 15 million daily predictions with real-time WebSocket streaming updates to the client?"
+      ]
+    },
+    "behavioralQuestions": [
+      "Tell me about a time you scaled the model inference pipeline at NeuroTech to 15 million daily predictions. How did you balance hardware cost efficiency against sub-100ms latency SLAs?",
+      "Describe a scenario where you had to collaborate closely with frontend and product teams to translate complex backend ML telemetry into an intuitive internal annotation dashboard.",
+      "Can you share an experience where an async data pipeline failed in production due to unexpected input data, and how you designed automated validation and recovery mechanisms?"
+    ],
+    "confrontationScript": "No discrepancies found.",
+    "fullAnalysisJson": {
+      "candidate_name": "Taylor Smith",
+      "gatekeeper_questions": [
+        {
+          "question": "What time zone / location constraint does this remote position require according to the JD?",
+          "options": {
+            "A": "European Central Time only",
+            "B": "Asia-Pacific working hours",
+            "C": "Remote (US/Canada Timezones)",
+            "D": "No location or time zone constraints"
+          },
+          "correct_answer": "C"
+        },
+        {
+          "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+          "options": {
+            "A": "Processing 10,000 req/sec using RabbitMQ",
+            "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+            "C": "Processing 50,000 batch records nightly with AWS SQS",
+            "D": "Single-server SQLite queue"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What baseline experience requirement is explicitly specified in the JD?",
+          "options": {
+            "A": "4+ years full-stack web development with modern TypeScript/Next.js stack",
+            "B": "1 year bootcamp certification",
+            "C": "15+ years enterprise legacy architecture",
+            "D": "Entry level without prior production deployments"
+          },
+          "correct_answer": "A"
+        }
+      ],
+      "verification": {
+        "linkedin_match_score": 100,
+        "discrepancies": []
+      },
+      "github_analysis": {
+        "top_languages": [
+          "Python",
+          "C++",
+          "TypeScript"
+        ],
+        "best_project": "transformer-pruning-toolkit — Structured weight pruning and INT4/FP8 quantization engine for HuggingFace Transformers with ONNX runtime export.",
+        "technical_questions": [
+          "Architecture: In transformer-pruning-toolkit, how did you structure the quantization pipeline to preserve model perplexity while exporting computation graphs to ONNX runtime?",
+          "Function/Library: In fast-onnx-serve, how does your async batching queue interact with uvloop and worker threads to prevent Python GIL contention during high-throughput inference?",
+          "Scaling & Performance: How would you transition this backend service into a distributed NestJS/Next.js full-stack platform serving 15 million daily predictions with real-time WebSocket streaming updates to the client?"
+        ]
+      },
+      "overall_verdict": "Maybe",
+      "behavioral_questions": [
+        "Tell me about a time you scaled the model inference pipeline at NeuroTech to 15 million daily predictions. How did you balance hardware cost efficiency against sub-100ms latency SLAs?",
+        "Describe a scenario where you had to collaborate closely with frontend and product teams to translate complex backend ML telemetry into an intuitive internal annotation dashboard.",
+        "Can you share an experience where an async data pipeline failed in production due to unexpected input data, and how you designed automated validation and recovery mechanisms?"
+      ],
+      "confrontation_script": "No discrepancies found."
+    },
+    "createdAt": "2026-09-09T07:51:06.153Z"
+  },
+  {
+    "id": "sub-1788948488703-wd1or",
+    "candidateName": "Alex Rivera",
+    "candidateEmail": "alex.rivera.dev@example.com",
+    "targetRole": "Staff Backend Engineer - Core Infrastructure",
+    "jobDescription": "Job Title: Staff Backend Engineer - Core Infrastructure\nLocation: San Francisco, CA (Hybrid: 2 days in office)\nTeam: Cloud Platform & Event Streaming Team\nExperience Required: 6+ years in high-throughput backend services\n\nRole Overview:\nWe are looking for a Staff Backend Engineer to design and scale our real-time event streaming pipeline processing over 250,000 events/second. You will lead our migration from legacy monolithic workers to a distributed NestJS and Go microservices mesh deployed on Kubernetes (EKS).\n\nRequirements:\n- Minimum 6 years of experience building distributed backend systems in TypeScript (NestJS/Node.js) or Go.\n- Production experience with Apache Kafka, Redis 7.x Cluster, and PostgreSQL with PgBouncer.\n- Strong knowledge of Kubernetes orchestration, Helm charts, and custom Prometheus metrics.\n- Prior experience leading cross-functional architectural reviews and mentoring 5+ engineers.\n- Must be located within commuting distance of San Francisco, CA.",
+    "cvText": "ALEX RIVERA\nEmail: alex.rivera.dev@example.com | GitHub: github.com/alexrivera-cloud | Location: San Francisco, CA\n\nPROFESSIONAL SUMMARY:\nStaff Backend Engineer with 8+ years architecting fault-tolerant distributed platforms, real-time message streams, and microservice meshes. Led infrastructure scale at ScaleWave from 50k to 300k rps.\n\nEMPLOYMENT HISTORY:\nScaleWave Systems — Staff Backend Architect (2020 – Present)\n- Designed and maintained core distributed event router processing 300k events/sec using NestJS, Go, and Kafka.\n- Reduced p99 API latency by 42% through Redis cluster caching strategies and PostgreSQL partition tuning.\n- Mentored a team of 7 senior engineers and drove infrastructure as code adoption via Terraform & EKS.\n\nDataFlow Inc. — Senior Backend Engineer (2017 – 2020)\n- Built high-concurrency ingestion pipelines using Node.js, TypeScript, and RabbitMQ.\n- Re-architected monolithic billing engine into resilient event-driven microservices.\n\nCloudGrid Solutions — Software Engineer (2015 – 2017)\n- Developed REST and gRPC microservices using Go and PostgreSQL.\n\nEDUCATION:\n- B.S. in Computer Science, University of California, Berkeley (2011 – 2015)\n\nCORE SKILLS:\nNestJS, TypeScript, Go, Apache Kafka, Redis 7, PostgreSQL, Kubernetes, Docker, AWS (EKS, RDS, S3), Prometheus, Distributed Systems.",
+    "linkedinText": "Alex Rivera\nStaff Backend Architect at ScaleWave Systems | Distributed Systems & High-Throughput Cloud\nSan Francisco Bay Area\n\nExperience:\nScaleWave Systems\nStaff Backend Architect\n2020 – Present · 4 yrs\nSan Francisco, California\nLeading architecture for real-time stream processing, Kafka pipelines, and NestJS microservices.\n\nDataFlow Inc.\nSenior Backend Engineer\n2017 – 2020 · 3 yrs\nSan Francisco, California\nHigh concurrency data pipelines and API architecture.\n\nCloudGrid Solutions\nSoftware Engineer\n2015 – 2017 · 2 yrs\nOakland, California\n\nEducation:\nUC Berkeley\nBachelor of Science - BS, Computer Science\n2011 – 2015\n\nSkills:\nDistributed Systems, Apache Kafka, NestJS, Go, Kubernetes, Redis, PostgreSQL, AWS, Microservices Architecture",
+    "githubText": "GitHub Profile: alexrivera-cloud\nPublic Repositories: 34 | Followers: 840 | Total Commits (Past Year): 1,420\n\nTop Repositories:\n1. repo: distributed-task-orchestrator (TypeScript / NestJS / Redis)\n   - Stars: 612 | Forks: 89\n   - Description: A distributed task queue and workflow engine with leader election, priority scheduling, and circuit breaker patterns. Built on top of NestJS and Redis Streams.\n   - Key Files: /src/engine/leader-election.ts, /src/cluster/circuit-breaker.ts, /src/queue/redis-stream-consumer.ts\n   - Recent Commits: \"feat(consumer): implement adaptive backoff and DLQ replay worker\", \"perf(streams): batch XREADGROUP ack pipeline to minimize roundtrips\"\n\n2. repo: fast-event-bus-ts (TypeScript)\n   - Stars: 245\n   - Description: Zero-dependency zero-copy publish-subscribe event emitter with lock-free ring buffer for Node.js workers.\n\n3. repo: kube-autoscaler-controller (Go)\n   - Stars: 180\n   - Description: Custom Kubernetes CRD controller scaling pods based on Kafka consumer lag metrics.\n\nLanguages breakdown:\n- TypeScript: 64%\n- Go: 26%\n- Shell / Dockerfile: 10%",
+    "overallVerdict": "Strong Yes",
+    "linkedinMatchScore": 100,
+    "gatekeeperQuestions": [
+      {
+        "question": "According to the Job Description, what is the work location and attendance policy for this role?",
+        "options": {
+          "A": "San Francisco, CA (Hybrid: 2 days in office)",
+          "B": "100% Remote anywhere in the world",
+          "C": "New York, NY (Full-time on-site)",
+          "D": "Austin, TX (Hybrid: 4 days in office)"
+        },
+        "correct_answer": "A"
+      },
+      {
+        "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+        "options": {
+          "A": "Processing 10,000 req/sec using RabbitMQ",
+          "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+          "C": "Processing 50,000 batch records nightly with AWS SQS",
+          "D": "Single-server SQLite queue"
+        },
+        "correct_answer": "B"
+      },
+      {
+        "question": "What is the minimum years of experience in distributed systems required by the JD?",
+        "options": {
+          "A": "Minimum 6+ years building distributed backend systems in TypeScript/Go",
+          "B": "2 years general programming experience",
+          "C": "10 years C++ embedded development",
+          "D": "No minimum experience specified"
+        },
+        "correct_answer": "A"
+      }
+    ],
+    "verification": {
+      "linkedin_match_score": 100,
+      "discrepancies": []
+    },
+    "githubAnalysis": {
+      "top_languages": [
+        "TypeScript",
+        "Go",
+        "Shell / Dockerfile"
+      ],
+      "best_project": "distributed-task-orchestrator — A distributed task queue and workflow engine with leader election, priority scheduling, and circuit breaker patterns built on NestJS & Redis Streams.",
+      "technical_questions": [
+        "Architecture: In distributed-task-orchestrator, how did you implement the leader election mechanism to prevent split-brain conditions across Redis Streams consumer groups when cluster network partitions occur?",
+        "Function/Library: In redis-stream-consumer.ts, what was your rationale for batching XREADGROUP acknowledgments, and how do you handle dead-letter-queue (DLQ) retries if a consumer worker crashes mid-batch?",
+        "Scaling & Performance: If your task queue load scales from 50,000 to 500,000 tasks/second, what bottleneck would you hit first in Redis memory serialization versus PostgreSQL persistence, and how would you optimize connection pooling with PgBouncer?"
+      ]
+    },
+    "behavioralQuestions": [
+      "Tell me about a time you led the architectural migration at ScaleWave to handle 300k events/sec, and how you managed cross-team risks without incurring downtime.",
+      "Describe a situation where you had to mentor a senior engineering team through an infrastructure overhaul (like adopting Terraform and EKS). How did you resolve engineering disagreements regarding best practices?",
+      "Can you share an example of a critical production latency incident you debugged in Redis or PostgreSQL, and what long-term preventive mechanisms you put in place?"
+    ],
+    "confrontationScript": "No discrepancies found.",
+    "fullAnalysisJson": {
+      "candidate_name": "Alex Rivera",
+      "gatekeeper_questions": [
+        {
+          "question": "According to the Job Description, what is the work location and attendance policy for this role?",
+          "options": {
+            "A": "San Francisco, CA (Hybrid: 2 days in office)",
+            "B": "100% Remote anywhere in the world",
+            "C": "New York, NY (Full-time on-site)",
+            "D": "Austin, TX (Hybrid: 4 days in office)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+          "options": {
+            "A": "Processing 10,000 req/sec using RabbitMQ",
+            "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+            "C": "Processing 50,000 batch records nightly with AWS SQS",
+            "D": "Single-server SQLite queue"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the minimum years of experience in distributed systems required by the JD?",
+          "options": {
+            "A": "Minimum 6+ years building distributed backend systems in TypeScript/Go",
+            "B": "2 years general programming experience",
+            "C": "10 years C++ embedded development",
+            "D": "No minimum experience specified"
+          },
+          "correct_answer": "A"
+        }
+      ],
+      "verification": {
+        "linkedin_match_score": 100,
+        "discrepancies": []
+      },
+      "github_analysis": {
+        "top_languages": [
+          "TypeScript",
+          "Go",
+          "Shell / Dockerfile"
+        ],
+        "best_project": "distributed-task-orchestrator — A distributed task queue and workflow engine with leader election, priority scheduling, and circuit breaker patterns built on NestJS & Redis Streams.",
+        "technical_questions": [
+          "Architecture: In distributed-task-orchestrator, how did you implement the leader election mechanism to prevent split-brain conditions across Redis Streams consumer groups when cluster network partitions occur?",
+          "Function/Library: In redis-stream-consumer.ts, what was your rationale for batching XREADGROUP acknowledgments, and how do you handle dead-letter-queue (DLQ) retries if a consumer worker crashes mid-batch?",
+          "Scaling & Performance: If your task queue load scales from 50,000 to 500,000 tasks/second, what bottleneck would you hit first in Redis memory serialization versus PostgreSQL persistence, and how would you optimize connection pooling with PgBouncer?"
+        ]
+      },
+      "overall_verdict": "Strong Yes",
+      "behavioral_questions": [
+        "Tell me about a time you led the architectural migration at ScaleWave to handle 300k events/sec, and how you managed cross-team risks without incurring downtime.",
+        "Describe a situation where you had to mentor a senior engineering team through an infrastructure overhaul (like adopting Terraform and EKS). How did you resolve engineering disagreements regarding best practices?",
+        "Can you share an example of a critical production latency incident you debugged in Redis or PostgreSQL, and what long-term preventive mechanisms you put in place?"
+      ],
+      "confrontation_script": "No discrepancies found."
+    },
+    "createdAt": "2026-09-09T10:08:08.703Z"
+  }
+]
