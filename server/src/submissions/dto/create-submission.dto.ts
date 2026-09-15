@@ -2,6 +2,10 @@ import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateSubmissionDto {
   @IsString()
+  @IsOptional()
+  jobId?: string;
+
+  @IsString()
   @IsNotEmpty()
   candidateName: string;
 
@@ -28,4 +32,7 @@ export class CreateSubmissionDto {
   @IsString()
   @IsNotEmpty()
   githubText: string;
+
+  @IsOptional()
+  candidateQuizAnswers?: any;
 }

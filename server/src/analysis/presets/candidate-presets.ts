@@ -1,1 +1,1 @@
-export * from '../../../../shared/presets';
+export * from '../../presets/candidate-presets';

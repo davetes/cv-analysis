@@ -7,6 +7,7 @@ import {
   HttpStatus,
   Param,
   Post,
+  Query,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
@@ -26,8 +27,8 @@ export class SubmissionsController {
   }
 
   @Get()
-  findAll(): Promise<StoredSubmission[]> {
-    return this.submissionsService.findAll();
+  findAll(@Query('jobId') jobId?: string): Promise<StoredSubmission[]> {
+    return this.submissionsService.findAll(jobId);
   }
 
   @Get(':id')

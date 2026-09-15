@@ -18,7 +18,9 @@ export class SubmissionsService implements OnModuleInit {
   public async seedDefaultsIfEmpty(): Promise<void> {
     const existing = await this.db.getAllSubmissions();
     if (existing.length === 0) {
-      this.logger.log('Seeding initial candidate presets into candidate database...');
+      this.logger.log('Seeding candidate submissions into database...');
+      const jobIds = ['job-scalewave-backend', 'job-hypergrowth-frontend', 'job-neurotech-fullstack'];
+
       for (const [idx, preset] of CANDIDATE_PRESETS.entries()) {
         const analysis = this.engine.analyze({
           jobDescription: preset.jobDescription,
@@ -29,6 +31,7 @@ export class SubmissionsService implements OnModuleInit {
 
         const submission: StoredSubmission = {
           id: `sub-${preset.id}-${Date.now() + idx}`,
+          jobId: jobIds[idx % jobIds.length],
           candidateName: preset.name,
           candidateEmail: `${preset.id}@example.com`,
           targetRole: preset.title,
@@ -39,6 +42,7 @@ export class SubmissionsService implements OnModuleInit {
           overallVerdict: analysis.overall_verdict,
           linkedinMatchScore: analysis.verification.linkedin_match_score,
           gatekeeperQuestions: analysis.gatekeeper_questions,
+          candidateQuizAnswers: idx === 0 ? { 0: 'A', 1: 'B', 2: 'A' } : idx === 1 ? { 0: 'A', 1: 'C', 2: 'A' } : { 0: 'C', 1: 'A', 2: 'A' },
           verification: analysis.verification,
           githubAnalysis: analysis.github_analysis,
           behavioralQuestions: analysis.behavioral_questions,
@@ -49,12 +53,12 @@ export class SubmissionsService implements OnModuleInit {
 
         await this.db.saveSubmission(submission);
       }
-      this.logger.log(`Seeded ${CANDIDATE_PRESETS.length} candidate profiles successfully.`);
+      this.logger.log(`Seeded ${CANDIDATE_PRESETS.length} candidate submissions successfully.`);
     }
   }
 
   public async create(dto: CreateSubmissionDto): Promise<StoredSubmission> {
-    this.logger.log(`Processing candidate application for: ${dto.candidateName}`);
+    this.logger.log(`Processing candidate application for: ${dto.candidateName} (Job: ${dto.jobId || 'General'})`);
 
     const analysis = this.engine.analyze({
       jobDescription: dto.jobDescription,
@@ -65,6 +69,7 @@ export class SubmissionsService implements OnModuleInit {
 
     const submission: StoredSubmission = {
       id: `sub-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+      jobId: dto.jobId || undefined,
       candidateName: dto.candidateName || analysis.candidate_name,
       candidateEmail: dto.candidateEmail || null,
       targetRole: dto.targetRole || 'Software Engineer',
@@ -75,6 +80,7 @@ export class SubmissionsService implements OnModuleInit {
       overallVerdict: analysis.overall_verdict,
       linkedinMatchScore: analysis.verification.linkedin_match_score,
       gatekeeperQuestions: analysis.gatekeeper_questions,
+      candidateQuizAnswers: dto.candidateQuizAnswers || null,
       verification: analysis.verification,
       githubAnalysis: analysis.github_analysis,
       behavioralQuestions: analysis.behavioral_questions,
@@ -88,8 +94,8 @@ export class SubmissionsService implements OnModuleInit {
     return saved;
   }
 
-  public async findAll(): Promise<StoredSubmission[]> {
-    return this.db.getAllSubmissions();
+  public async findAll(jobId?: string): Promise<StoredSubmission[]> {
+    return this.db.getAllSubmissions(jobId);
   }
 
   public async findOne(id: string): Promise<StoredSubmission> {
