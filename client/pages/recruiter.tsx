@@ -7,7 +7,6 @@ import { GatekeeperQuiz } from '../components/GatekeeperQuiz';
 import { DiffInspector } from '../components/DiffInspector';
 import { GitHubDeepDive } from '../components/GitHubDeepDive';
 import { InterviewScriptCard } from '../components/InterviewScriptCard';
-import { JsonOutputViewer } from '../components/JsonOutputViewer';
 import { CandidateInputForm } from '../components/CandidateInputForm';
 import { CANDIDATE_PRESETS } from '../data/presets';
 import { CandidateAnalysisResponse, AnalyzeCandidateRequest } from '../types';
@@ -441,9 +440,6 @@ export default function RecruiterPage() {
                     confrontationScript={currentAnalysis.confrontation_script}
                     behavioralQuestions={currentAnalysis.behavioral_questions}
                   />
-
-                  {/* Strict JSON Output */}
-                  <JsonOutputViewer analysis={currentAnalysis} />
                 </div>
               ) : (
                 <div className="glass-card" style={{ padding: '40px', textAlign: 'center' }}>
@@ -479,7 +475,6 @@ export default function RecruiterPage() {
                     confrontationScript={manualAnalysis.confrontation_script}
                     behavioralQuestions={manualAnalysis.behavioral_questions}
                   />
-                  <JsonOutputViewer analysis={manualAnalysis} />
                 </div>
               )}
             </div>

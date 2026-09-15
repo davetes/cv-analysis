@@ -28,7 +28,6 @@ import { GatekeeperQuiz } from '../components/GatekeeperQuiz';
 import { DiffInspector } from '../components/DiffInspector';
 import { GitHubDeepDive } from '../components/GitHubDeepDive';
 import { InterviewScriptCard } from '../components/InterviewScriptCard';
-import { JsonOutputViewer } from '../components/JsonOutputViewer';
 import { CANDIDATE_PRESETS } from '../data/presets';
 import { CandidateAnalysisResponse } from '../types';
 
@@ -505,7 +504,6 @@ export default function EmployerDashboard() {
                   confrontationScript={currentAnalysis.confrontation_script}
                   behavioralQuestions={currentAnalysis.behavioral_questions}
                 />
-                <JsonOutputViewer analysis={currentAnalysis} />
               </div>
             ) : (
               <div className="glass-card" style={{ padding: '40px', textAlign: 'center' }}>

@@ -566,6 +566,135 @@
         "confrontation_script": "No discrepancies found."
       },
       "createdAt": "2026-09-15T11:12:36.975Z"
+    },
+    {
+      "id": "sub-1789472172761-escc0",
+      "jobId": "job-scalewave-backend",
+      "candidateName": "Alex Rivera",
+      "candidateEmail": "alex.rivera.dev@example.com",
+      "targetRole": "Staff Backend Engineer - Core Infrastructure",
+      "jobDescription": "Job Title: Staff Backend Engineer - Core Infrastructure\nLocation: San Francisco, CA (Hybrid: 2 days in office)\nTeam: Cloud Platform & Event Streaming Team\nExperience Required: 6+ years in high-throughput backend services\n\nRole Overview:\nWe are looking for a Staff Backend Engineer to design and scale our real-time event streaming pipeline processing over 250,000 events/second. You will lead our migration from legacy monolithic workers to a distributed NestJS and Go microservices mesh deployed on Kubernetes (EKS).\n\nRequirements:\n- Minimum 6 years of experience building distributed backend systems in TypeScript (NestJS/Node.js) or Go.\n- Production experience with Apache Kafka, Redis 7.x Cluster, and PostgreSQL with PgBouncer.\n- Strong knowledge of Kubernetes orchestration, Helm charts, and custom Prometheus metrics.\n- Prior experience leading cross-functional architectural reviews and mentoring 5+ engineers.\n- Must be located within commuting distance of San Francisco, CA.",
+      "cvText": "hey",
+      "linkedinText": "https://linkedin",
+      "githubText": "hello",
+      "overallVerdict": "Strong Yes",
+      "linkedinMatchScore": 100,
+      "gatekeeperQuestions": [
+        {
+          "question": "According to the Job Description, what is the work location and attendance policy for this role?",
+          "options": {
+            "A": "San Francisco, CA (Hybrid: 2 days in office)",
+            "B": "100% Remote anywhere in the world",
+            "C": "New York, NY (Full-time on-site)",
+            "D": "Austin, TX (Hybrid: 4 days in office)"
+          },
+          "correct_answer": "A"
+        },
+        {
+          "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+          "options": {
+            "A": "Processing 10,000 req/sec using RabbitMQ",
+            "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+            "C": "Processing 50,000 batch records nightly with AWS SQS",
+            "D": "Single-server SQLite queue"
+          },
+          "correct_answer": "B"
+        },
+        {
+          "question": "What is the minimum years of experience in distributed systems required by the JD?",
+          "options": {
+            "A": "Minimum 6+ years building distributed backend systems in TypeScript/Go",
+            "B": "2 years general programming experience",
+            "C": "10 years C++ embedded development",
+            "D": "No minimum experience specified"
+          },
+          "correct_answer": "A"
+        }
+      ],
+      "candidateQuizAnswers": null,
+      "verification": {
+        "linkedin_match_score": 100,
+        "discrepancies": []
+      },
+      "githubAnalysis": {
+        "top_languages": [
+          "TypeScript",
+          "Python",
+          "Docker"
+        ],
+        "best_project": "Primary Core Repository — High-performance service architecture and automated deployment pipeline.",
+        "technical_questions": [
+          "Architecture: Walking through your primary repository 'Primary Core Repository', what design patterns and architectural boundaries did you establish to separate business logic from external data adapters?",
+          "Function/Library: What was the most technically challenging custom module or third-party library integration in your repository, and how did you handle edge-case error recovery?",
+          "Scaling & Performance: If production traffic to your service increased by 20x overnight, where would the primary latency bottleneck emerge, and what caching or asynchronous queue strategy would you implement to mitigate it?"
+        ]
+      },
+      "behavioralQuestions": [
+        "Tell me about the most technically challenging project highlighted on your CV, and how you navigated unexpected architectural roadblocks during delivery.",
+        "Describe a situation where you had to align competing priorities between technical debt refactoring and urgent product feature deadlines with stakeholders.",
+        "Can you share an example of how you championed code quality, testing standards, or architectural guidelines within your previous engineering team?"
+      ],
+      "confrontationScript": "No discrepancies found.",
+      "fullAnalysisJson": {
+        "candidate_name": "hey",
+        "gatekeeper_questions": [
+          {
+            "question": "According to the Job Description, what is the work location and attendance policy for this role?",
+            "options": {
+              "A": "San Francisco, CA (Hybrid: 2 days in office)",
+              "B": "100% Remote anywhere in the world",
+              "C": "New York, NY (Full-time on-site)",
+              "D": "Austin, TX (Hybrid: 4 days in office)"
+            },
+            "correct_answer": "A"
+          },
+          {
+            "question": "What target throughput scale and primary messaging technology are highlighted in the JD?",
+            "options": {
+              "A": "Processing 10,000 req/sec using RabbitMQ",
+              "B": "Processing over 250,000 events/second using Apache Kafka & Redis 7.x",
+              "C": "Processing 50,000 batch records nightly with AWS SQS",
+              "D": "Single-server SQLite queue"
+            },
+            "correct_answer": "B"
+          },
+          {
+            "question": "What is the minimum years of experience in distributed systems required by the JD?",
+            "options": {
+              "A": "Minimum 6+ years building distributed backend systems in TypeScript/Go",
+              "B": "2 years general programming experience",
+              "C": "10 years C++ embedded development",
+              "D": "No minimum experience specified"
+            },
+            "correct_answer": "A"
+          }
+        ],
+        "verification": {
+          "linkedin_match_score": 100,
+          "discrepancies": []
+        },
+        "github_analysis": {
+          "top_languages": [
+            "TypeScript",
+            "Python",
+            "Docker"
+          ],
+          "best_project": "Primary Core Repository — High-performance service architecture and automated deployment pipeline.",
+          "technical_questions": [
+            "Architecture: Walking through your primary repository 'Primary Core Repository', what design patterns and architectural boundaries did you establish to separate business logic from external data adapters?",
+            "Function/Library: What was the most technically challenging custom module or third-party library integration in your repository, and how did you handle edge-case error recovery?",
+            "Scaling & Performance: If production traffic to your service increased by 20x overnight, where would the primary latency bottleneck emerge, and what caching or asynchronous queue strategy would you implement to mitigate it?"
+          ]
+        },
+        "overall_verdict": "Strong Yes",
+        "behavioral_questions": [
+          "Tell me about the most technically challenging project highlighted on your CV, and how you navigated unexpected architectural roadblocks during delivery.",
+          "Describe a situation where you had to align competing priorities between technical debt refactoring and urgent product feature deadlines with stakeholders.",
+          "Can you share an example of how you championed code quality, testing standards, or architectural guidelines within your previous engineering team?"
+        ],
+        "confrontation_script": "No discrepancies found."
+      },
+      "createdAt": "2026-09-15T11:36:12.761Z"
     }
   ]
 }
