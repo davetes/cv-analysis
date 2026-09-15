@@ -130,7 +130,7 @@ export default function JobApplyPage() {
       const data = await res.json();
       setSubmissionResult(data);
 
-      try { confetti({ particleCount: 60, spread: 70 }); } catch (err) {}
+      try { confetti({ particleCount: 60, spread: 70 }); } catch (err) { }
     } catch (err) {
       console.warn('API error, using local fallback:', err);
       // Fallback
@@ -357,7 +357,7 @@ export default function JobApplyPage() {
                     className="btn-primary"
                     onClick={() => {
                       setQuizSubmitted(true);
-                      try { confetti({ particleCount: 50 }); } catch (e) {}
+                      try { confetti({ particleCount: 50 }); } catch (e) { }
                     }}
                     disabled={Object.keys(candidateAnswers).length < submissionResult.gatekeeperQuestions.length}
                     style={{ marginTop: '10px' }}
@@ -379,23 +379,7 @@ export default function JobApplyPage() {
         ) : (
           /* Google Form-Style Application Fields */
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-            {/* Autofill Demo Strip */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#ffffff', padding: '12px 18px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: 'var(--shadow-sm)', flexWrap: 'wrap', gap: '8px' }}>
-              <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 700, textTransform: 'uppercase' }}>
-                Quick Test Autofill:
-              </span>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <button type="button" className="btn-secondary" onClick={() => handleAutofill('alex-rivera')} style={{ fontSize: '0.75rem', padding: '5px 10px' }}>
-                  Alex Rivera (Staff Backend)
-                </button>
-                <button type="button" className="btn-secondary" onClick={() => handleAutofill('jordan-lee')} style={{ fontSize: '0.75rem', padding: '5px 10px' }}>
-                  Jordan Lee (Lead Frontend)
-                </button>
-                <button type="button" className="btn-secondary" onClick={() => handleAutofill('taylor-smith')} style={{ fontSize: '0.75rem', padding: '5px 10px' }}>
-                  Taylor Smith (AI/ML)
-                </button>
-              </div>
-            </div>
+
 
             {/* Section 1: Candidate Contact Info */}
             <div className="glass-card">
