@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, UserCheck, Globe, GitBranch, Sparkles, RefreshCw } from 'lucide-react';
+import { FileText, UserCheck, Globe, GitBranch, Sparkles, RefreshCw, Database, Check, User } from 'lucide-react';
 import { AnalyzeCandidateRequest } from '../types';
 
 interface CandidateInputFormProps {
@@ -7,6 +7,7 @@ interface CandidateInputFormProps {
   setInputData: React.Dispatch<React.SetStateAction<AnalyzeCandidateRequest>>;
   onAnalyze: () => void;
   isLoading: boolean;
+  onSavedToDatabase?: () => void;
 }
 
 type TabType = 'jd' | 'cv' | 'linkedin' | 'github';
@@ -16,8 +17,12 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
   setInputData,
   onAnalyze,
   isLoading,
+  onSavedToDatabase,
 }) => {
   const [activeTab, setActiveTab] = useState<TabType>('jd');
+  const [candidateName, setCandidateName] = useState<string>('Alex Rivera');
+  const [isSavingDb, setIsSavingDb] = useState<boolean>(false);
+  const [saveSuccess, setSaveSuccess] = useState<boolean>(false);
 
   const handleTextChange = (field: keyof AnalyzeCandidateRequest, value: string) => {
     setInputData(prev => ({
@@ -32,6 +37,40 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
       case 'cv': handleTextChange('cvText', ''); break;
       case 'linkedin': handleTextChange('linkedinText', ''); break;
       case 'github': handleTextChange('githubText', ''); break;
+    }
+  };
+
+  const handleSaveToDatabase = async () => {
+    setIsSavingDb(true);
+    setSaveSuccess(false);
+
+    try {
+      const payload = {
+        candidateName: candidateName || 'Candidate',
+        jobDescription: inputData.jobDescription,
+        cvText: inputData.cvText,
+        linkedinText: inputData.linkedinText,
+        githubText: inputData.githubText,
+        targetRole: 'Software Engineer',
+      };
+
+      const res = await fetch('/api/submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setSaveSuccess(true);
+        if (onSavedToDatabase) onSavedToDatabase();
+        if (onAnalyze) onAnalyze();
+        setTimeout(() => setSaveSuccess(false), 3000);
+      }
+    } catch (err) {
+      console.warn('Database save error:', err);
+      if (onAnalyze) onAnalyze();
+    } finally {
+      setIsSavingDb(false);
     }
   };
 
@@ -50,6 +89,24 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
           <RefreshCw size={12} />
           Clear Tab
         </button>
+      </div>
+
+      {/* Candidate Name Input */}
+      <div style={{ marginBottom: '14px' }}>
+        <label style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-secondary)', display: 'block', marginBottom: '4px' }}>
+          Candidate Name
+        </label>
+        <div style={{ position: 'relative' }}>
+          <input
+            type="text"
+            className="custom-textarea"
+            style={{ height: '40px', padding: '8px 12px 8px 34px' }}
+            placeholder="e.g. Alex Rivera"
+            value={candidateName}
+            onChange={(e) => setCandidateName(e.target.value)}
+          />
+          <User size={14} style={{ position: 'absolute', left: '12px', top: '13px', color: 'var(--text-muted)' }} />
+        </div>
       </div>
 
       {/* Tabs */}
@@ -90,6 +147,7 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
           <>
             <textarea
               className="custom-textarea"
+              style={{ height: '320px' }}
               placeholder="Paste Job Description (JD) text here... Include role requirements, tech stack, team expectations, locations..."
               value={inputData.jobDescription}
               onChange={(e) => handleTextChange('jobDescription', e.target.value)}
@@ -105,6 +163,7 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
           <>
             <textarea
               className="custom-textarea"
+              style={{ height: '320px' }}
               placeholder="Paste Candidate CV / Resume plain text here... Include summary, employment history with dates, education, achievements..."
               value={inputData.cvText}
               onChange={(e) => handleTextChange('cvText', e.target.value)}
@@ -120,6 +179,7 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
           <>
             <textarea
               className="custom-textarea"
+              style={{ height: '320px' }}
               placeholder="Paste Scraped LinkedIn profile text here... Include headline, experience history, dates, skills, education..."
               value={inputData.linkedinText}
               onChange={(e) => handleTextChange('linkedinText', e.target.value)}
@@ -135,6 +195,7 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
           <>
             <textarea
               className="custom-textarea"
+              style={{ height: '320px' }}
               placeholder="Paste GitHub profile analysis / repository data here... Include repo names, descriptions, languages breakdown, commit messages..."
               value={inputData.githubText}
               onChange={(e) => handleTextChange('githubText', e.target.value)}
@@ -147,29 +208,29 @@ export const CandidateInputForm: React.FC<CandidateInputFormProps> = ({
         )}
       </div>
 
-      <button
-        className="btn-primary"
-        onClick={onAnalyze}
-        disabled={isLoading || !inputData.jobDescription || !inputData.cvText}
-      >
-        {isLoading ? (
-          <>
-            <div style={{ width: '16px', height: '16px', border: '2px solid white', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
-            Running HireAssist AI Analysis...
-          </>
-        ) : (
-          <>
-            <Sparkles size={18} />
-            Run HireAssist AI Analysis
-          </>
-        )}
-      </button>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <button
+          className="btn-primary"
+          onClick={handleSaveToDatabase}
+          disabled={isSavingDb || isLoading || !inputData.jobDescription || !inputData.cvText}
+        >
+          {isSavingDb ? (
+            <>Saving to Database & Running AI...</>
+          ) : (
+            <>
+              <Database size={16} />
+              Save Candidate into Database & Analyze
+            </>
+          )}
+        </button>
 
-      <style jsx>{`
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
+        {saveSuccess && (
+          <div style={{ padding: '8px 12px', background: '#ecfdf5', border: '1px solid #a7f3d0', borderRadius: '8px', color: '#065f46', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <Check size={14} />
+            Successfully saved candidate profile into database!
+          </div>
+        )}
+      </div>
     </div>
   );
 };
