@@ -199,7 +199,7 @@ export default function JobApplyPage() {
         <title>{job?.title ? `${job.title} - Application Form` : 'Job Application Form'}</title>
       </Head>
 
-      <div style={{ maxWidth: '820px', margin: '0 auto', padding: '32px 16px 80px' }}>
+      <div style={{ maxWidth: '820px', margin: '0 auto', padding: '16px 12px 60px' }}>
         {/* Top Google Forms-Style Banner Card */}
         <div style={{
           background: '#ffffff',
@@ -207,19 +207,19 @@ export default function JobApplyPage() {
           border: '1px solid #e2e8f0',
           boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
           overflow: 'hidden',
-          marginBottom: '20px'
+          marginBottom: '16px'
         }}>
           {/* Form Top Accent Bar */}
-          <div style={{ height: '10px', background: 'linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899)' }} />
+          <div style={{ height: '8px', background: 'linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899)' }} />
 
-          <div style={{ padding: '24px 28px' }}>
+          <div style={{ padding: '18px 20px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px' }}>
               <div>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#4f46e5', fontWeight: 700, marginBottom: '6px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem', color: '#4f46e5', fontWeight: 700, marginBottom: '4px' }}>
                   <Building size={14} color="#4f46e5" />
                   {job?.company || 'Hiring Company'}
                 </div>
-                <h1 style={{ fontSize: '1.75rem', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em' }}>
+                <h1 style={{ fontSize: 'clamp(1.25rem, 4vw, 1.75rem)', fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em', lineHeight: 1.25 }}>
                   {job?.title || 'Engineering Application Form'}
                 </h1>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.82rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
